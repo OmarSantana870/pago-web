@@ -1,11 +1,11 @@
-# TODO - Fixar problema del select de tipo de tarjeta
+# TODO - Nuevos fixes formulario (teléfono + expiry)
 
-## Pasos del plan aprobado:
+**Anterior completado.**
 
-- [x] 1. Actualizar styles.css: mejorar contraste del select (fondo oscuro, texto blanco visible en dropdown options/focus). ✅
-- [ ] 2. Probar el cambio localmente.
-- [ ] 3. `git add .`
-- [ ] 4. `git commit -m \"Fix select tipo de tarjeta: mejor contraste en dropdown"`
-- [ ] 5. `git push origin main` (para deploy automático en Netlify)
+## Pasos nuevos (plan aprobado):
 
-Después de completar, usar attempt_completion.
+- [x] 1. Editar script.js: \n  - Teléfono: auto-formato (###) ###-####, max 10 dígitos. ✅\n  - Expiry: MM <=12 (truncar si >12), formato MM/YY. ✅
+- [ ] 2. `git add .`
+- [ ] 3. `git commit -m \"Add auto-format teléfono + validación MM expiry\"`
+- [ ] 4. `git push origin main`
+- [ ] 5. Test: `start index.html`

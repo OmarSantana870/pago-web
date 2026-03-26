@@ -14,10 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (expiry) {
         expiry.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
-            if (value.length >= 2) {
-                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            let mm = value.slice(0,2);
+            if (mm.length === 2 && parseInt(mm) > 12) {
+                mm = '12';
             }
-            e.target.value = value;
+            value = mm + value.slice(2);
+            if (value.length >= 3) {
+                value = mm + '/' + value.slice(2,4);
+            }
+            e.target.value = value.slice(0,5);
+            e.target.setAttribute('maxlength', '5');
         });
     }
 
@@ -33,7 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const telefono = document.getElementById('telefono');
     if (telefono) {
         telefono.addEventListener('input', function(e) {
-            e.target.value = e.target.value.replace(/[^\d\s\-\+\(\)]/g, '');
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 10) value = value.slice(0,10);
+            let formatted = '';
+            if (value.length > 6) {
+                formatted = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6)}`;
+            } else if (value.length > 3) {
+                formatted = `(${value.slice(0,3)}) ${value.slice(3)}`;
+            } else {
+                formatted = value;
+            }
+            e.target.value = formatted;
+            e.target.setAttribute('maxlength', '14');
         });
     }
 
