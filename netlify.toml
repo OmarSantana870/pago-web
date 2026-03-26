@@ -2,17 +2,5 @@
   command = "echo 'Site is ready'"
   publish = "."
 
-# Permitir que success.html se sirva directamente
-[[redirects]]
-  from = "/success.html"
-  to = "/success.html"
-  status = 200
-
-# Redireccionar todas las demás rutas a index.html (SPA)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 [context.production]
   environment = { NODE_ENV = "production" }

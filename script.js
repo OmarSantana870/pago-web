@@ -67,25 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Redirigir a success.html después del envío del formulario de pago
-    const formPago = document.querySelector('.form-pago');
-    if (formPago) {
-        formPago.addEventListener('submit', function() {
-            // Esperar a que Netlify procese el formulario y luego redirigir
-            setTimeout(function() {
-                window.location.href = '/success.html';
-            }, 500);
-        });
-    }
-
-    // Redirigir a success.html después del envío del formulario de contacto
-    const formContacto = document.querySelector('.form-contacto');
-    if (formContacto) {
-        formContacto.addEventListener('submit', function() {
-            // Esperar a que Netlify procese el formulario y luego redirigir
-            setTimeout(function() {
-                window.location.href = '/success.html';
-            }, 500);
-        });
-    }
+    // Netlify Forms maneja automáticamente la confirmación del formulario
+    // No es necesario redirigir - Netlify muestra su confirmación nativa
 });
