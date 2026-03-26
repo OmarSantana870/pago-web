@@ -67,32 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Manejar envío del formulario de pago
-    window.handleFormSubmit = function(event) {
-        event.preventDefault();
-        
-        const form = event.target;
-        const formData = new FormData(form);
-        
-        // Enviar el formulario a Netlify
-        fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData)
-        })
-        .then(response => {
-            if (response.ok) {
-                // Mostrar mensaje de éxito
-                alert('¡Consulta agendada exitosamente! Pronto nos pondremos en contacto.');
-                form.reset();
-                return;
-            }
-            throw new Error('Error al enviar el formulario');
-        })
-        .catch(error => {
-            alert('Error: ' + error.message);
-        });
-        
-        return false;
-    };
+    // Netlify Form Detection maneja automáticamente los formularios
+    // Los datos se procesan y almacenan en el dashboard de Netlify
 });
