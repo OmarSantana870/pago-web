@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Solicitud Recibida! - Consulta pagada con exito</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5f8d 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: bounce 0.8s ease-in-out;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        h1 {
+            color: #1a3a52;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .details {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .details h3 {
+            color: #1a3a52;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #1a3a52;
+        }
+        
+        .detail-value {
+            color: #666;
+        }
+        
+        .btn-home {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a3a52;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .info-box {
+            background: #e8f5e9;
+            border: 1px solid #4caf50;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">✅</div>
+        <h1>¡Solicitud Recibida!</h1>
+        
+        <p>Te agradecemos por tu solicitud de consulta.</p>
+        
+        <div class="info-box">
+            <strong>¿Qué sucede ahora?</strong>
+            <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">
+                Nuestro equipo de profesionales revisará tu solicitud en las próximas 24 horas y se comunicará contigo a través del correo electrónico que proporcionaste.
+            </p>
+        </div>
+        
+        <div class="details">
+            <h3>Detalles de tu Solicitud</h3>
+            <div class="detail-item">
+                <span class="detail-label">Estado:</span>
+                <span class="detail-value">Procesando</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Tiempo de Respuesta:</span>
+                <span class="detail-value">24 horas máximo</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Referencia:</span>
+                <span class="detail-value">#Consulta2026</span>
+            </div>
+        </div>
+        
+        <p style="font-size: 0.95rem; color: #999;">
+            Se ha enviado una confirmación a tu correo electrónico.
+        </p>
+        
+        <a href="/" class="btn-home">Volver al Inicio</a>
+    </div>
+</body>
+</html>

