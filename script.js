@@ -67,22 +67,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Mensajes después del envío (sin preventDefault)
+    // Redirigir a success.html después del envío del formulario de pago
     const formPago = document.querySelector('.form-pago');
     if (formPago) {
         formPago.addEventListener('submit', function() {
+            // Esperar a que Netlify procese el formulario y luego redirigir
             setTimeout(function() {
-                alert('¡Consulta agendada exitosamente! Pronto nos pondremos en contacto.');
-            }, 1000);
+                window.location.href = '/success.html';
+            }, 500);
         });
     }
 
+    // Redirigir a success.html después del envío del formulario de contacto
     const formContacto = document.querySelector('.form-contacto');
     if (formContacto) {
         formContacto.addEventListener('submit', function() {
+            // Esperar a que Netlify procese el formulario y luego redirigir
             setTimeout(function() {
-                alert('¡Mensaje enviado! Nos comunicaremos pronto.');
-            }, 1000);
+                window.location.href = '/success.html';
+            }, 500);
         });
     }
 });
